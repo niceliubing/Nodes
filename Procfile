@@ -1,1 +1,1 @@
-web: ruby app.rb
+ai: ruby app.rb
