@@ -8,7 +8,9 @@ class Berlin::AI::Player
     game.map.controlled_nodes.each do |node|
         
       node.adjacent_nodes.shuffle.each do |other_node|
+        
         soldiers = rand(0..(node.available_soldiers))
+        
         game.add_move(node, other_node, soldiers)
       end
       
