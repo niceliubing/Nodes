@@ -1,1 +1,1 @@
-web: ruby app.rb -p $PORT
+ai: ruby app.rb
