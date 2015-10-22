@@ -17,16 +17,7 @@ class Berlin::AI::Player
 end
 
 
-#all addjacent nodes are mine - keep only one soldier
-def isNodeInDanger(node)
-    
-    node.adjacent_nodes.each do |other_node|
-      #other_node.      
-    end
-  
-end
 
-#get nodes closer to the enemy
 
 
 
