@@ -10,9 +10,9 @@ class Berlin::AI::Player
     strategies = [];
     results = [];
     
-    strategies.push Move_soldiers_to_adjacent_nodes.new
     strategies.push Simple_attack_strategy.new
     strategies.push Move_Free_Node_Strategy.new
+    strategies.push Move_soldiers_to_adjacent_nodes.new
     
 
     # each node
@@ -29,8 +29,11 @@ class Berlin::AI::Player
       
       if (results.length > 0)
         puts "execute strategy"
-        r = results.at(0)
-        r.execute game
+         r = results[0]
+         r.execute game
+       # results.each do |r|
+        #  r.execute game
+        #end
 #        results.sort_by { |r| -r[:points] }[0].execute game
       end
       
