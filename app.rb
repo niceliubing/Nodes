@@ -1,6 +1,7 @@
 require 'berlin-ai'         # Require the berlin-ai library.
 require "./strategies/attack"
 require "./strategies/moveFreeNode"
+require "./strategies/moveSoldersToAdjacent"
 
 
 class Berlin::AI::Player
@@ -9,8 +10,10 @@ class Berlin::AI::Player
     strategies = [];
     results = [];
     
+    strategies.push Move_soldiers_to_adjacent_nodes.new
     strategies.push Simple_attack_strategy.new
     strategies.push Move_Free_Node_Strategy.new
+    
 
     # each node
     game.map.controlled_nodes.each do |node|
