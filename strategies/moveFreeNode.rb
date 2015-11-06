@@ -22,13 +22,14 @@ require "./strategies/result"
               end
             end
 
-            if results.length > 0
+            return results;
+            #if results.length > 0
 
-             results.sort_by!{|node| node.other_node.soldiers_per_turn}.reverse
+             #results.sort_by!{|node| node.other_node.soldiers_per_turn}.reverse
              # r = results.sort_by{|x| -x.other_node.soldiers_per_turn]}
-             return results.at(0)
+             #return results.at(0)
              # return results.sort_by { |r| -r[:points] }[0]
-            end
+            #end
 
         end
 

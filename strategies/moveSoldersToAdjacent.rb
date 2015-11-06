@@ -36,8 +36,9 @@ require "./strategies/result"
               #  puts  "node.available_soldiers= #{node.available_soldiers} number_of_soldiers #{ node.number_of_soldiers } incoming_soldiers #{node.incoming_soldiers}"
 
                 results.push(move_action) unless results.include?(move_action)
+                return results;
              #r = results.sort_by {|x| x.points}
-             return results.at(0)
+             #return results.at(0)
              # return results.sort_by { |r| -r[:points] }[0]
             end
 

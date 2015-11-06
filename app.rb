@@ -23,7 +23,7 @@ class Berlin::AI::Player
           currentResult =  strategy.apply_on_node node, game
 
           if currentResult != nil
-            results.push currentResult
+            results += currentResult
           end
       end
 
