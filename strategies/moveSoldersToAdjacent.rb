@@ -25,13 +25,14 @@ require "./strategies/result"
                   end
             end
 
+=begin
             if !owned_adjacent_node.nil?
 
               all_occupied_adjacent = has_all_occupied_adjacent_node(owned_adjacent_node )
 
             end
-
-            if (node.available_soldiers > total_enemy_soldiers) && !owned_adjacent_node.nil? && (all_occupied_adjacent == false)
+=end
+            if (node.available_soldiers > total_enemy_soldiers) && !owned_adjacent_node.nil? #&& (all_occupied_adjacent == false)
 
                 move_action = Strategy_result.new
                 move_action.node = node
