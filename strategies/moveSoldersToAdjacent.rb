@@ -25,12 +25,18 @@ require "./strategies/result"
                   end
             end
 
-            if (node.available_soldiers > total_enemy_soldiers) && !owned_adjacent_node.nil?
+            if !owned_adjacent_node.nil?
+
+              all_occupied_adjacent = has_all_occupied_adjacent_node(owned_adjacent_node )
+
+            end
+
+            if (node.available_soldiers > total_enemy_soldiers) && !owned_adjacent_node.nil? && (all_occupied_adjacent == false)
 
                 move_action = Strategy_result.new
                 move_action.node = node
                 move_action.other_node = owned_adjacent_node
-                move_action.number_of_soldiers =  1#node.available_soldiers - total_enemy_soldiers
+                move_action.number_of_soldiers =  node.available_soldiers - total_enemy_soldiers
                 move_action.points = 1#(other_node.types == "city" ? 2 : 1)
                 move_action.strategy_name = "move soldiers to adjacent owned node"
               #  puts  "node.available_soldiers= #{node.available_soldiers} number_of_soldiers #{ node.number_of_soldiers } incoming_soldiers #{node.incoming_soldiers}"
@@ -43,5 +49,18 @@ require "./strategies/result"
             end
 
   end
+
+    def has_all_occupied_adjacent_node node
+      result = true;
+      node.adjacent_nodes.each do |other_node|
+            if other_node.enemy?
+              result = false;
+            elsif other_node.free?
+              result = false;
+            end
+      end
+
+      return result;
+    end
 
   end
